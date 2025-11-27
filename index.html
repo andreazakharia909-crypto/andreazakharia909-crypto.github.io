@@ -101,6 +101,7 @@
 </audio>
 
 <script>
+// Falling Hearts Animation
 window.onload = () => setInterval(() => {
     let heart = document.createElement("div");
     heart.classList.add("heart");
@@ -111,6 +112,17 @@ window.onload = () => setInterval(() => {
     document.body.appendChild(heart);
     setTimeout(() => heart.remove(), 5000);
 }, 300);
+
+// Auto Play Music — Browser membutuhkan interaksi minimal 1x
+document.addEventListener("click", () => {
+    let music = document.getElementById("music");
+    music.play().catch(e => console.log("Auto play blocked 😅"));
+}, { once: true });
+
+// Auto play attempt on load (backup)
+document.getElementById("music").play().catch(e => {
+    console.log("Waiting for interaction to enable audio...");
+});
 </script>
 
 <!-- SLIDE 1 - Password -->
@@ -239,6 +251,7 @@ function confetti(){
 
 </body>
 </html>
+
 
 
 
