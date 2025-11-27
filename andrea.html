@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Andrea ❤️</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        font-family: 'Poppins', sans-serif;
+        background: radial-gradient(circle,#8a001f,#400013);
+        color: white;
+        overflow: hidden;
+    }
+    .container {
+        width: 90%;
+        max-width: 750px;
+        padding: 25px;
+        background: rgba(255,255,255,0.15);
+        border-radius: 20px;
+        backdrop-filter: blur(8px);
+        text-align: center;
+        margin: auto;
+        margin-top: 40px;
+        animation: fade 1s ease;
+    }
+    @keyframes fade {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+    button {
+        background: #ff003c;
+        border: none;
+        color: white;
+        font-size: 18px;
+        padding: 12px 22px;
+        border-radius: 14px;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: 0.3s;
+        font-weight: bold;
+    }
+    button:hover {
+        background: #ff678a;
+        transform: scale(1.1);
+    }
+    .slide { display: none; }
+    img {
+        width: 210px;
+        border-radius: 20px;
+        border: 4px solid #fff;
+        transition: .3s;
+    }
+    img:hover {
+        transform: scale(1.1);
+    }
+    /* LOVE FALLING */
+    .heart {
+        position: fixed;
+        top: -10px;
+        font-size: 20px;
+        color: pink;
+        animation: fall 6s linear infinite;
+    }
+    @keyframes fall {
+        to { transform: translateY(110vh) rotate(360deg); }
+    }
+    
+    /* STAR BACKGROUND */
+    .stars {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: url('https://i.imgur.com/0jz1XbE.png');
+        animation: twinkle 4s infinite alternate;
+        opacity: .8;
+    }
+    @keyframes twinkle {
+        from { opacity: .2; }
+        to { opacity: .8; }
+    }
+
+    input {
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<!-- MUSIC -->
+<audio id="song" autoplay loop>
+    <!-- Ganti dengan file mp3 Kasih Putih yang kamu punya -->
+    <source src="kasih-putih.mp3" type="audio/mp3">
+</audio>
+
+<!-- HEART FALL SCRIPT -->
+<script>
+    function hearts() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => { heart.remove(); }, 6000);
+    }
+    setInterval(hearts, 300);
+</script>
+
+<div class="container">
+
+    <!-- PASSWORD SLIDE -->
+    <div class="slide" id="slide1" style="display:block;">
+        <h2>Masukkan Password Cinta 😳</h2>
+        <p>Password: Nama panggilan paling romantis yg aku panggil ke kamu ❤️</p>
+        <input type="text" id="pass" placeholder="coba tebak...">
+        <button onclick="checkPass()">Masuk ➜</button>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide" id="slide2">
+        <h1>Happy Birthday Andrea 🎂✨</h1>
+        <p>Pacarku yang paling ganteng se-Indonesia Raya 🇮🇩💘</p>
+        <img src="FOTO-ANDREA1.jpg" alt="Andrea">
+        <button onclick="nextSlide()">Next ➜</button>
+    </div>
+
+    <div class="slide" id="slide3">
+        <h2>Berapa umur kamu hari ini? 🤓</h2>
+        <input type="number" id="age">
+        <button onclick="nextSlide()">Jawab ➜</button>
+    </div>
+
+    <div class="slide" id="slide4">
+        <h2>Siapa yang paling kamu sayang? 😏</h2>
+        <button onclick="nextSlide()">Novriani dong 😍</button>
+    </div>
+
+    <div class="slide" id="slide5">
+        <h2>Coba klik foto doi 🤭</h2>
+        <img src="FOTO-ANDREA2.jpg" onclick="nextSlide()">
+    </div>
+
+    <div class="slide" id="slide6">
+        <h1>🎉 SURPRISE 🎉</h1>
+        <p>Jangan kaget ya! Klik NEXT! 😳</p>
+        <button onclick="confetti(); nextSlide();">NEXT ➜</button>
+    </div>
+
+    <div class="slide" id="slide7">
+        <h1>Untuk Andrea ❤️</h1>
+        <p>
+        Kamu adalah alasan aku semangat setiap hari.<br>
+        Kamu hebat, kamu kuat, dan kamu layak bahagia selalu.<br><br>
+        Stay with me selamanya ya? 🥺💞
+        </p>
+        <button onclick="nextSlide(); confetti();">Next ➜</button>
+    </div>
+
+    <!-- SLIDE 8 FINAL LOVE MESSAGE -->
+    <div class="slide" id="slide8">
+        <h1>💖 For My One and Only 💖</h1>
+        <p style="font-size:18px;line-height:1.6;">
+            To the one who holds my heart, happy birthday!<br>
+            You are my favorite one.<br><br>
+
+            Once again, happy birthdaynggg, sayanggg 💞<br>
+            I love you so much infinityyy forever and ever infinityyy!! ♾️❤️<br><br>
+
+            God bless you sayanggg 😇<br>
+            Apapun yang kamu lakuin, aku yakin Tuhan pasti selalu membantu dan menopang kamu<br>
+            dalam segala hal yang sedang kamu kerjakan,<br>
+            terutama Sidang Kompremuu ✨<br><br>
+
+            <b>AMEN 🙏</b><br><br>
+
+            I love You Babick kuuu 😘💗
+        </p>
+        <button onclick="confetti()">🎉💘🎉</button>
+    </div>
+
+</div>
+
+<!-- CONFETTI -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+function confetti() {
+    confetti({
+        particleCount: 200,
+        spread: 180
+    });
+}
+
+let slideIndex = 1;
+function nextSlide() {
+    document.getElementById("slide" + slideIndex).style.display = "none";
+    slideIndex++;
+    if(document.getElementById("slide" + slideIndex)) {
+        document.getElementById("slide" + slideIndex).style.display = "block";
+    }
+}
+
+function checkPass() {
+    let p = document.getElementById("pass").value.toLowerCase();
+    if(p.includes("sayang") || p.includes("hasian") || p.includes("cintaku") || p.includes("babick")) {
+        nextSlide();
+    } else {
+        alert("Salah 😝 Coba yang lebih romantis dong!");
+    }
+}
+</script>
+
+</body>
+</html>
